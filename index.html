@@ -20,7 +20,7 @@
       overflow: hidden;
     }
 
-    /* Main iframe without zoom */
+    /* Main iframe with scale fix */
     .main-iframe {
       position: absolute;
       top: 0;
@@ -28,6 +28,10 @@
       width: 100%;
       height: 100%;
       border: none;
+
+      /* scale to fit */
+      transform: scale(0.95); /* adjust from 0.9 to 1.0 as needed */
+      transform-origin: 0 0;
     }
 
     /* Footer */
@@ -44,6 +48,7 @@
       justify-content: center;
       font-size: 22px;
       font-weight: bold;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -51,7 +56,7 @@
   <div class="iframe-container">
     <iframe class="main-iframe" 
       src="https://my-site-o8vao02w-virtualis015.wix-vibe.com" 
-      title="Google App Script Web App" 
+      title="BIZMART Web App" 
       allowfullscreen>
     </iframe>
 
