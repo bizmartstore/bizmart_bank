@@ -9,19 +9,58 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      width: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
     }
-    iframe {
-      border: none;
+
+    .iframe-container {
+      position: relative;
       width: 100%;
-      height: 100vh; /* full viewport height */
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Main iframe with zoom scale */
+    .main-iframe {
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%) scale(3); /* Adjust scale as needed */
+      transform-origin: top center;
+      width: calc(100% / 3);
+      height: calc((100% + 120px) / 3);
+      border: none;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: white;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbyMeNIPqZsWYEzwXbESRiufkN2GjR9IlMUo7SEM4wxpd2q5Kv12uopwl3rX30Z130ki/exec" 
-          title="Google App Script Web App">
-  </iframe>
-</body>
+  <div class="iframe-container">
+    <iframe class="main-iframe" 
+      src="https://script.google.com/macros/s/AKfycbyMeNIPqZsWYEzwXbESRiufkN2GjR9IlMUo7SEM4wxpd2q5Kv12uopwl3rX30Z130ki/exec" 
+      title="Google App Script Web App" 
+      allowfullscreen>
+    </iframe>
 
+    <!-- Footer -->
+    <div class="footer">
+      © 2025 Bizmart Digital Bank
+    </div>
+  </div>
+</body>
 </html>
